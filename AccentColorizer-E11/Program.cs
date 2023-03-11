@@ -16,7 +16,7 @@ namespace AccentColorizer_E11
         private static string ASSETS_PATH = @"FileExplorerExtensions\Assets\images\contrast-standard\theme-";
         private const string PACKAGE_21H2 = @"MicrosoftWindows.Client.CBS_cw5n1h2txyewy\";
         private const string PACKAGE_22H2 = @"MicrosoftWindows.Client.Core_cw5n1h2txyewy\";
-
+        private const string PACKAGE_WASDK = @"MicrosoftWindows.Client.FileExp_cw5n1h2txyewy\";
         static void Main(string[] args)
         {
             RegistryKey key;
@@ -27,13 +27,17 @@ namespace AccentColorizer_E11
             }
             catch (UnauthorizedAccessException)
             {
-                Utility.RunElevated(ARGUMENT_TAKEOWN + (args.Length == 1 ? " " + args[0] : ""));
+                Utility.RunElevated(ARGUMENT_TAKEOWN + (args.Length == 2 ? " " + args[0] : ""));
                 return;
             }
 
-            if (Directory.Exists(BASE_PATH + PACKAGE_22H2))
+            if (Directory.Exists(BASE_PATH + PACKAGE_WASDK))
             {
-                BASE_PATH += PACKAGE_22H2;
+                BASE_PATH += PACKAGE_WASDK;
+            }
+            else if (Directory.Exists(BASE_PATH + PACKAGE_22H2))
+            {
+                BASE_PATH += PACKAGE_WASDK;
             }
             else
             {
