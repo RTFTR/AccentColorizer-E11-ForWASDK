@@ -37,7 +37,7 @@ namespace AccentColorizer_E11
             }
             else if (Directory.Exists(BASE_PATH + PACKAGE_22H2))
             {
-                BASE_PATH += PACKAGE_WASDK;
+                BASE_PATH += PACKAGE_22H2;
             }
             else
             {
