@@ -1,5 +1,7 @@
 # AccentColorizer-E11 For WindowsAppSDK File Explorer
 
+# This project is no longer maintained as the original project started to support WASDK explorer.
+
 Starting from 25309(Old Insiders Dev), Microsoft introduced WindowsAppSDK File Explorer. However, the location of icons for the new File Explorer was changed. This is why the original AccentColorizer-E11 is not working.
 I edited a bit to make it work.
 
